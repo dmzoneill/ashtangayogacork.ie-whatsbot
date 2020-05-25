@@ -116,7 +116,7 @@ function start(client) {
 
 		if(remaining === "reload" || Object.keys(handlers).length == 0) {
 			default_libs.forEach(element => {
-				var module_file = element + '.js';
+				var module_file = './' + element + '.js';
 
 				if(Object.keys(handlers).indexOf(element) > -1) {
 					delete handlers[element];
