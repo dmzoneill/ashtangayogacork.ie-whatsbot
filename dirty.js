@@ -56,12 +56,12 @@ module.exports = class dirty {
 
         if (message.body.toLowerCase().indexOf("dickhead") > -1) {
 			console.log("dickhead");
-			this.sendImage(client, recip, ['dickhead.jpg', 'dickhead.jpg', '']);
+			this.sendImage(client, recip, ['./dickhead.jpg', 'dickhead.jpg', '']);
 		}
 
 		if (message.body.toLowerCase().indexOf("buzzing") > -1) {
 			console.log("buzzing");
-			this.sendImage(client, recip, ['buzzing.jpg', 'buzzing.jpg', '']);
+			this.sendImage(client, recip, ['./buzzing.jpg', 'buzzing.jpg', '']);
 		}
 	}
 

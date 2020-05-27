@@ -27,6 +27,7 @@ module.exports = class help {
 			do_message(client, message, message.from, 'Standby, resetting your password...');
 
 			var token = fs.readFileSync('../github-token', 'utf8');
+		        token = token.trim()
 
 			console.log("token: " + token);
 			console.log("requester:" + message.sender.id);
@@ -53,9 +54,6 @@ module.exports = class help {
 				res.on('end',function(){
 					console.log("Body :" + body);
 					var resp = JSON.parse(body);
-					var stop = new Date().getTime();
-					
-					while(new Date().getTime() < stop + 1000) {;;}
 					
 					if(resp.result != "") {
 						do_message(client, message, message.from, "Your new password is: ");
@@ -78,7 +76,8 @@ module.exports = class help {
 			do_message(client, message, message.from, 'Standby, unlocking your account...');
 
 			var token = fs.readFileSync('../github-token', 'utf8');
-
+		        token = token.trim()
+			
 			console.log("token: " + token);
 			console.log("requester:" + message.sender.id);
 			var phone = message.sender.id.split('@');
@@ -104,11 +103,6 @@ module.exports = class help {
 				res.on('end',function(){
 					console.log("Body :" + body);
 					var resp = JSON.parse(body);
-					var stop = new Date().getTime();
-					
-					while(new Date().getTime() < stop + 1000) {
-        				;
-					}
 					
 					if(resp.result != "") {
 						do_message(client, message, message.from, resp.result[1]);
