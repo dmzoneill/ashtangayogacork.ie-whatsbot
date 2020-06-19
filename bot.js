@@ -1,6 +1,6 @@
 // Supports ES6
 // import { create, Whatsapp } from 'sulla';
-const sulla = require('sulla');
+const sulla = require('venom-bot');
 
 sulla.create().then((client) => start(client));
 
