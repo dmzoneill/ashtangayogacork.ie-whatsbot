@@ -27,7 +27,7 @@ module.exports = class welcome {
         if (message.body.toLowerCase() === "hi" || message.body.toLowerCase().startsWith("hi ")) {
             var msg = 'Hi ' + message.sender.pushname + ', welcome to Ashtanga Yoga Cork!\n\nIf you need any help just type !help\nand i will private message you.      👋';
             do_message(client, message, message.from, msg);
-		}
+	}
     }
 
     do_new_participant(client, who, do_message) {

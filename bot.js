@@ -186,13 +186,18 @@ function start(client) {
 	}
 
 	var do_message = function(client, message, to, msg) {
-		var stop = new Date().getTime();
+		try {
+		    var stop = new Date().getTime();
 
-		if(message!=null) client.startTyping(message.from);	
-		while(new Date().getTime() < stop + 1000) {;}
-		client.sendText(to, msg);
-		while(new Date().getTime() < stop + 500) {;}
-		if(message!=null) client.stopTyping(message.from);
+		    if(message!=null) client.startTyping(message.from);	
+		    while(new Date().getTime() < stop + 1000) {;}
+		    client.sendText(to, msg);
+		    while(new Date().getTime() < stop + 500) {;}
+		    if(message!=null) client.stopTyping(message.from);
+		} catch(e) {
+		    console.log("Caught: ");
+		    console.log(e);
+		}
 	}
 
 	client.onParticipantsChanged(aycgroup, (event) => {
